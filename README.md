@@ -1,1 +1,8 @@
 # projet_phase_4
+# Apercu du projet
+Ce projet développe un système de recommandation à partir du jeu de données MovieLens 100k, qui contient environ 100 000 évaluations de films par des utilisateurs. Le problème métier abordé est de fournir des recommandations de films personnalisées afin d'améliorer l'engagement des utilisateurs sur une plateforme de streaming. Le jeu de données est particulièrement adapté à cette tâche, car il contient des évaluations utilisateur explicites (de 1 à 5 étoiles), permettant ainsi de prédire et d'évaluer leurs préférences.
+# Méthodes
+L'approche de modélisation principale a utilisé la décomposition en valeurs singulières (SVD) du package Surprise, qui factorise la matrice d'interaction utilisateur-film en caractéristiques latentes représentant les préférences de l'utilisateur et les caractéristiques du film. L'entraînement et les tests ont été réalisés avec une répartition 80/20, garantissant une évaluation équitable sur des données non visualisées. Aucun réglage approfondi des hyperparamètres n'a été effectué par souci de simplicité, mais l'implémentation de la SVD fournit une base solide.
+# Evaluation
+L'évaluation du modèle s'est basée sur l'erreur quadratique moyenne (RMSE) et l'erreur absolue moyenne (MAE), deux mesures appropriées pour la prédiction explicite des notes.  Les résultats montrent que le modèle SVD surpasse significativement le modèle de référence de popularité pour capturer les préférences personnalisées. Cela confirme la robustesse du filtrage collaboratif comme approche de recommandation. Les travaux futurs se concentreront sur l'hybridation avec des méthodes basées sur le contenu afin de pallier les limitations du démarrage à froid.
+
